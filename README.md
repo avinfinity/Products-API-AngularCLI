@@ -1,6 +1,8 @@
 # Products-API-AngularCLI
 Simple project to show all avaliable products. Uses .Net core as API dev environment and Angular CLI as front end
 
+![Simple Products Demo](ProductAppAnim.gif)
+
 ## Prerequisites
 
 * [.NET Core 3.1 SDK](https://dotnet.microsoft.com/download)
@@ -47,6 +49,13 @@ Steps:
 Add-Migration Initial
 Update-Database
 ```
+Alternatively, you could also use below commands from powershell:
+
+```
+dotnet ef migrations add InitialCreate
+dotnet ed databse update
+```
+
 4. Now press F5 and run the application. You would see empty product page, if no products are avaliable in my-sql database
 
 Database connection string:
