@@ -53,7 +53,7 @@ Alternatively, you could also use below commands from powershell:
 
 ```
 dotnet ef migrations add InitialCreate
-dotnet ef databse update
+dotnet ef database update
 ```
 
 4. Now press F5 and run the application. You would see empty product page, if no products are avaliable in my-sql database
