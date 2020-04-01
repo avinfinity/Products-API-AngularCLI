@@ -1,0 +1,47 @@
+<h1>{{operationType}} product</h1>
+<form (ngSubmit)="save()" [hidden]="isSubmitted" #addEditForm="ngForm">
+  <div class="form-group">
+    <label for="name" class=" control-label col-md-12">Name</label>
+      <input class="form-control" type="text" id="name" 
+      required [(ngModel)]="existingProduct.name" name="name" #name="ngModel">
+    <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+      Name is required.
+    </div>
+  </div>
+  <div class="form-group">
+    <label class=" control-label" for="category">Category</label>
+  
+    <input class="form-control" type="text" name="category" autocomplete="on" list="categories" id="category" required 
+        [(ngModel)]="existingProduct.category" name="category" #category="ngModel" />
+    <datalist id="categories">
+        <option *ngFor="let category of categories" value={{category}}>
+        </option>
+    </datalist>
+      <div [hidden]="category.valid || category.pristine" class="alert alert-danger">
+        Valid category is required.
+      </div>
+  </div>
+
+  <div class="form-group">
+    <label for="quantity" class="control-label">Quantity</label>
+      <input class="form-control" type="number" id="quantity" 
+      required [(ngModel)]="existingProduct.quantity" name="quantity" #quantity="ngModel">
+    <div [hidden]="quantity.valid || quantity.pristine" class="alert alert-danger">
+      Valid quantity is required.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="unitPrice" class="control-label">Unit Price</label>
+      <input class="form-control" type="number" id="unitPrice" 
+      required [(ngModel)]="existingProduct.unitPrice" name="unitPrice" #unitPrice="ngModel">
+    <div [hidden]="unitPrice.valid || unitPrice.pristine" class="alert alert-danger">
+      Valid unit price is required.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <button type="submit" title="Save" [disabled]="!addEditForm.form.valid" class="btn btn-success float-right">Save</button>
+    <button class="btn btn-secondary float-left" (click)="cancel()">Cancel</button>
+  </div>
+</form>
